@@ -25,7 +25,7 @@ ContentstackLivePreview.init({
     stackSdk: Stack.config as any, // once type definition is availble from SDK any need to be replaced with IStackSdk
     ssr: false,
     enable: true,
-    mode: "builder"
+    mode: 'builder'
 })
 
 export const onEntryChange = ContentstackLivePreview.onEntryChange
