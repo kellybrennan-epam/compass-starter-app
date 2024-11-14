@@ -8,7 +8,7 @@ export const Stack = Contentstack.stack({
     branch: process.env.CONTENTSTACK_BRANCH,
     host: process.env.CONTENTSTACK_HOST,
     live_preview: {
-        enable: process.env.isLivePreviewEnabled,
+        enable: process.env.CONTENTSTACK_LIVE_PREVIEW,
         host: process.env.CONTENTSTACK_PREVIEW_HOST,
         preview_token: process.env.CONTENTSTACK_PREVIEW_TOKEN
     }
@@ -24,7 +24,7 @@ ContentstackLivePreview.init({
     },
     stackSdk: Stack.config as any, // once type definition is availble from SDK any need to be replaced with IStackSdk
     ssr: false,
-    enable: process.env.isLivePreviewEnabled,
+    enable: process.env.CONTENTSTACK_LIVE_PREVIEW,
     mode: 'builder'
 })
 
