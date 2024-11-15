@@ -3,10 +3,10 @@ export default async function handler (request, context) {
     const parsedUrl = new URL (request.url)
     // reset the SDK to remove any existing context
     Personalize.reset()
-    if (context.env.NEXT_PUBLIC_CONTENTSTACK_PERSONALIZE_EDGE_API_URL) {
-        Personalize.setEdgeApiUrl(context.env.NEXT_PUBLIC_CONTENTSTACK_PERSONALIZE_EDGE_API_URL)
+    if (context.env.CONTENTSTACK_PERSONALIZE_EDGE_API_URL) {
+        Personalize.setEdgeApiUrl(context.env.CONTENTSTACK_PERSONALIZE_EDGE_API_URL)
     }
-    await Personalize.init(context.env.NEXT_PUBLIC_CONTENTSTACK_PERSONALIZE_PROJECT_UID, {
+    await Personalize.init(context.env.CONTENTSTACK_PERSONALIZE_PROJECT_UID, {
         request
     })
     // get the variant parameter from the SDK
